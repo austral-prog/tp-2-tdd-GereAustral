@@ -5,7 +5,7 @@ Ejercicios de Test-Driven Development (TDD)
 
 ## 1. Leap Year
 
-### Objetivo
+### Objetivo//
 Implementar una función que determine si un año es bisiesto siguiendo la metodología TDD.
 
 ### Especificaciones
