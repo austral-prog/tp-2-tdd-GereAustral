@@ -5,26 +5,90 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RomanNumeralsTest {
 
-    // TODO: Replace these lines with your tests
+    private final RomanNumerals converter = new RomanNumerals();
+
     @Test
-    void exampleTest(){
-        assertEquals(4, 2 + 1);
+    public void convert1ToI() {
+        assertEquals("I", converter.convert(1));
     }
 
-//    Missing tests:
-//
-//- Convert 1 to "I"
-//- Convert 5 to "V"
-//- Convert 10 to "X"
-//- Convert 4 to "IV" (subtraction case)
-//- Convert 9 to "IX" (subtraction case)
-//- Convert 40 to "XL"
-//- Convert 50 to "L"
-//- Convert 90 to "XC"
-//- Convert 100 to "C"
-//- Convert 400 to "CD"
-//- Convert 500 to "D"
-//- Convert 900 to "CM"
-//- Convert 1000 to "M"
-//- Convert complex numbers like 1994 to "MCMXCIV"
+    @Test
+    public void convert4ToIV() {
+        assertEquals("IV", converter.convert(4));
+    }
+
+    @Test
+    public void convert5ToV() {
+        assertEquals("V", converter.convert(5));
+    }
+
+    @Test
+    public void convert9ToIX() {
+        assertEquals("IX", converter.convert(9));
+    }
+
+    @Test
+    public void convert10ToX() {
+        assertEquals("X", converter.convert(10));
+    }
+
+    @Test
+    public void convert40ToXL() {
+        assertEquals("XL", converter.convert(40));
+    }
+
+    @Test
+    public void convert50ToL() {
+        assertEquals("L", converter.convert(50));
+    }
+
+    @Test
+    public void convert90ToXC() {
+        assertEquals("XC", converter.convert(90));
+    }
+
+    @Test
+    public void convert100ToC() {
+        assertEquals("C", converter.convert(100));
+    }
+
+    @Test
+    public void convert400ToCD() {
+        assertEquals("CD", converter.convert(400));
+    }
+
+    @Test
+    public void convert500ToD() {
+        assertEquals("D", converter.convert(500));
+    }
+
+    @Test
+    public void convert900ToCM() {
+        assertEquals("CM", converter.convert(900));
+    }
+
+    @Test
+    public void convert1000ToM() {
+        assertEquals("M", converter.convert(1000));
+    }
+
+    @Test
+    public void convert1994ToMCMXCIV() {
+        assertEquals("MCMXCIV", converter.convert(1994));
+    }
+
+    @Test
+    public void convert0ShouldBeInvalid() {
+        assertEquals("Invalid Roman Numeral", converter.convert(0));
+    }
+
+    @Test
+    public void convertNegativeShouldBeInvalid() {
+        assertEquals("Invalid Roman Numeral", converter.convert(-5));
+    }
+
+    @Test
+    public void convert4000ShouldBeInvalid() {
+        assertEquals("Invalid Roman Numeral", converter.convert(4000));
+    }
 }

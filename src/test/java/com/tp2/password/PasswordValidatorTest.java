@@ -6,12 +6,41 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
 class PasswordValidatorTest {
+    private PasswordValidator passwordvalidator = new PasswordValidator();
 
     // TODO: Replace these lines with your tests
     @Test
-    void exampleTest(){
-        assertEquals(4, 2 + 1);
+    public void Less8Chars(){
+        assertFalse(passwordvalidator.isValid("Vele"));
     }
+
+    @Test
+    public void MoreThan8(){
+        assertTrue(passwordvalidator.isValid("Pablo1234!"));
+    }
+
+    @Test
+    public void AlmostOneUpper(){
+        assertTrue(passwordvalidator.isValid("Pablo1234!"));
+    }
+
+    @Test
+    public void AlmostOneLower(){
+        assertTrue(passwordvalidator.isValid("Pablo1234!"));
+    }
+    @Test
+    public void AlmostOneNumber(){
+        assertTrue(passwordvalidator.isValid("Pablo1234!"));
+    }
+    @Test
+    public void AlmostOneSpecial(){
+        assertTrue(passwordvalidator.isValid("Pablo1234!"));
+    }
+    @Test
+    public void passwordMeetingAllCriteria() {
+        assertTrue(passwordvalidator.isValid("Pablo1234!"));
+    }
+
 
 //    Missing tests:
 //
